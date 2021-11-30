@@ -1,0 +1,98 @@
+#include <iostream>
+#include <ncurses.h>
+#include <stdlib.h>
+#include <string>
+#include <cstring>
+#include <windows.h>
+#include <time.h>
+using namespace std;
+
+int main(){
+ string kalimat01="===========================================================";
+ string kalimat02="   ####             #             ####                     ";
+ string kalimat03="  #    #            #            #                         ";
+ string kalimat04="  #                 #            #                         ";
+ string kalimat05="   #                #            #                         ";
+ string kalimat06="    #               #  #  ####   #                    #### ";
+ string kalimat07="     #    ###   ##  # #  #    #  #  ##   ##  #     # #   # ";
+ string kalimat08="      #  #   # #  # ##   #####   #    # #  # ##   ## ####  ";
+ string kalimat09=" #    #  #   # #  # # #  #       #    # #  # # # # # #     ";
+ string kalimat10="  ####   #   #  ### #  # ####     ####   ### #  #  # ####  ";
+ string kalimat11="===========================================================";
+
+string kiri01=" ";
+string kiri02=" ";
+string kiri03=" ";
+string kiri04=" ";
+string kiri05=" ";
+string kiri06=" ";
+string kiri07=" ";
+string kiri08=" ";
+string kiri09=" ";
+string kiri10=" ";
+string kiri11=" ";
+
+
+string kanan01=" ";
+string kanan02=" ";
+string kanan03=" ";
+string kanan04=" ";
+string kanan05=" ";
+string kanan06=" ";
+string kanan07=" ";
+string kanan08=" ";
+string kanan09=" ";
+string kanan10=" ";
+string kanan11=" ";
+
+short int baris,kolom,huruf,panjang_kalimat,perulangan,penambah;
+initscr();
+clear();
+
+ panjang_kalimat = kalimat01.length();
+ perulangan =(panjang_kalimat/2);
+ baris = 5;
+
+for (huruf=0;huruf<perulangan;huruf++){
+kolom=50-huruf;
+kiri01 = kiri01 + kalimat01[huruf];
+kiri02 = kiri02 + kalimat02[huruf];
+kiri03 = kiri03 + kalimat03[huruf];
+kiri04 = kiri04 + kalimat04[huruf];
+kiri05 = kiri05 + kalimat05[huruf];
+kiri06 = kiri06 + kalimat06[huruf];
+kiri07 = kiri07 + kalimat07[huruf];
+kiri08 = kiri08 + kalimat08[huruf];
+kiri09 = kiri09 + kalimat09[huruf];
+kiri10 = kiri10 + kalimat10[huruf];
+kiri11 = kiri11 + kalimat11[huruf];
+	
+kanan01 = kalimat01[panjang_kalimat-1-huruf]+kanan01;
+kanan02 = kalimat02[panjang_kalimat-1-huruf]+kanan02;
+kanan03 = kalimat03[panjang_kalimat-1-huruf]+kanan03;
+kanan04 = kalimat04[panjang_kalimat-1-huruf]+kanan04;
+kanan05 = kalimat05[panjang_kalimat-1-huruf]+kanan05;
+kanan06 = kalimat06[panjang_kalimat-1-huruf]+kanan06;
+kanan07 = kalimat07[panjang_kalimat-1-huruf]+kanan07;
+kanan08 = kalimat08[panjang_kalimat-1-huruf]+kanan08;
+kanan09 = kalimat09[panjang_kalimat-1-huruf]+kanan09;
+kanan10 = kalimat10[panjang_kalimat-1-huruf]+kanan10;
+kanan11 = kalimat11[panjang_kalimat-1-huruf]+kanan11;
+    
+mvprintw(baris+1,kolom,"%s%s",kiri01.c_str(),kanan01.c_str());
+mvprintw(baris+2,kolom,"%s%s",kiri02.c_str(),kanan02.c_str());
+mvprintw(baris+3,kolom,"%s%s",kiri03.c_str(),kanan03.c_str());
+mvprintw(baris+4,kolom,"%s%s",kiri04.c_str(),kanan04.c_str());
+mvprintw(baris+5,kolom,"%s%s",kiri05.c_str(),kanan05.c_str());
+mvprintw(baris+6,kolom,"%s%s",kiri06.c_str(),kanan06.c_str());
+mvprintw(baris+7,kolom,"%s%s",kiri07.c_str(),kanan07.c_str());
+mvprintw(baris+8,kolom,"%s%s",kiri08.c_str(),kanan08.c_str());
+mvprintw(baris+9,kolom,"%s%s",kiri09.c_str(),kanan09.c_str());
+mvprintw(baris+10,kolom,"%s%s",kiri10.c_str(),kanan10.c_str());
+mvprintw(baris+11,kolom,"%s%s",kiri11.c_str(),kanan11.c_str());
+    
+refresh(); Sleep(0100); 
+}
+getch();
+endwin(); 
+}
