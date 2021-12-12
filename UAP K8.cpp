@@ -285,7 +285,7 @@ int main()
 		refresh();
 		
 		if (ntail==2){
-			mvprintw(12,77,"F for rsepect");
+			mvprintw(12,77,"F for credit");
 		}else{
 			mvprintw(12,77,"             ");
 		}
